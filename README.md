@@ -1,8 +1,8 @@
-Inspiration
+#Inspiration
 
 The main issue we faced in our early years of computer science education was not having an accurate understanding of basic concepts of DS algorithms . As a visual learner, it was harder to grasp these concepts just through lectures. Our goal was to overcome these limitations by developing a website called Koncept, which provides a visual depiction of complex algorithms, thereby bridging the gap between theory and practice,particularly for beginners.
 
-Introduction
+#Introduction
 
 Koncept is a dynamic webpage designed to demonstrate and interactively visualize various sorting and searching algorithms. It provides users with a platform to observe the behavior of algorithms in real-time and understand their workings through interactive visualizations. Koncept serves as an educational tool for computer science students, developers, and anyone interested in understanding algorithmic concepts.
 
@@ -38,7 +38,7 @@ D3.js Structural Overview
       - Selection Sort :
       * Purpose : Selection sort iterates through the array, selecting the smallest (or largest, depending on sorting order) element, and swapping it with the first unsorted element. This process continues until the entire array is sorted. 
 
-Usage
+#Usage
 
 Select a searching or sorting algorithm from the dropdown menu.
 Adjust the animation speed using the slider controls.
@@ -47,9 +47,7 @@ Study visualization and observe how the algorithm works step by step.
 Read the brief description provided to understand the pseudocode of the concept.
 Repeat the process with different algorithms to compare their performance.
 
-Future Scope
-
-FUTURE SCOPE
+#Future Scope
 
 To further enhance its utility and educational value, we aim to expand the project in the following directions:
 
@@ -57,7 +55,7 @@ To further enhance its utility and educational value, we aim to expand the proje
 * Incorporate a wider range of sorting, searching, and other fundamental algorithms, such as merge sort, quicksort, depth-first search, and breadth-first search.
 * Implement feature for user-provided input data for algorithms, allowing users to experiment with different scenarios and input sizes.
 
-Contributors 
+#Contributors 
 
 Agnes Mary Allen
 Devu S Thirumangal
