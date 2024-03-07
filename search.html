@@ -17,36 +17,31 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="home.html">KONCEPT</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="sort.html">Sorting Algorithms</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="search.html">Searching Algorithms</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+       <!--Main Navigation-->
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+    <a class="navbar-brand" href="home.html"> <img class="logo" src="assets/img/LOGO2long.png" height="15"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav ml-auto"> 
+  <li class="nav-item ">
+  <a class="nav-link" href="home.html"> <span class="sr-only"></span></a>
+  </li>
+  <li class="nav-item"><a class="nav-link" href="sort.html"> Sorting Algorithms </a></li>
+  <li class="nav-item"><a class="nav-link active" href="search.html"> Searching Algorithms </a></li>
+
+      </ul>
+    </div>
+  </nav>
+  
+  </header>
+  <!--Main Navigation-->
    <br>
     <div class="container">
       <h1>KONCEPT - SEARCHING VISUALISER</h1>
@@ -106,6 +101,64 @@
     <div id="foundNotice" class="container text-success text-center"></div>
     
 
+    
+    <section class="container">
+      <br><br><br>
+      <h1><strong>Dive In Deeper!</strong></h1>
+    </section>
+
+  <section class="container text-justify">
+    <br>
+    <h2>Linear Search</h2>
+    <p>Linear search is a simple search algorithm that sequentially checks each element in a list or array until the target element is found or the end of the list is reached. It starts from the beginning and compares each element with the target value until a match is found. If the target is found, it returns the index of the target element; otherwise, it returns -1 if the target is not present in the list. Linear search has a time complexity of O(n), where n is the number of elements in the list. It is suitable for small lists or unsorted data but becomes inefficient for large lists compared to other search algorithms like binary search.</p>
+  <pre>
+  <code>
+    //Linear Search
+    LinearSearch(list, target_element):
+   {
+     INITIALIZE index = 0
+       WHILE (index &amp;lt; number of items in the list)
+       {
+         IF (list[index] == target element)
+         {
+             RETURN index
+         }
+         INCREMENT index by 1
+       }
+     RETURN -1
+   }
+</code>
+</pre>
+</section>
+
+<section class="container text-justify">
+  <br>
+  <h2>Binary Search</h2>
+  <p>Binary search is a method for finding a target value within a sorted array. It starts with defining pointers at the lowest and highest indices of the array. Then, it repeatedly halves the search interval by calculating the middle index. If the target is found at the middle index, the search terminates. Otherwise, it narrows the search range based on whether the target is greater or lesser than the element at the middle index. The process continues until the target is found or the search interval becomes empty. If the target is not found, -1 is returned.</p>
+<pre>
+<code>
+ //Binary Search
+ BinarySearch(array, target):
+ {
+     left = lowestBound(array)
+     right = highestBound(array)
+ 
+     WHILE (left &lt;= right)
+     {
+         middle = (left + right) / 2
+         if(target = array[middle])
+             RETURN middle
+         else if(target &lt; array[middle])
+            right = middle - 1
+         else
+            left = middle + 1
+     }
+     RETURN -1
+ }
+</code>
+</pre>
+</section>
+
     <footer>
       <div class="footer-text">
         <p>
@@ -118,5 +171,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="searchbase.js"></script>
     <script src="searchfunction.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
   </body>
 </html>

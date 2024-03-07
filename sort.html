@@ -17,40 +17,31 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="home.html">KONCEPT</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="sort.html"
-                  >Sorting Algorithms <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="search.html"
-                  >Searching Algorithms</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+          <!--Main Navigation-->
+<header>
+
+  <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html"> <img class="logo" src="assets/img/LOGO2long.png" height="15"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav ml-auto"> 
+  <li class="nav-item ">
+  <a class="nav-link" href="home.html"> <span class="sr-only"></span></a>
+  </li>
+  <li class="nav-item"><a class="nav-link active" href="sort.html"> Sorting Algorithms </a></li>
+  <li class="nav-item"><a class="nav-link" href="search.html"> Searching Algorithms </a></li>
+
+      </ul>
+    </div>
+  </nav>
+  
+  </header>
+  <!--Main Navigation-->
     <br>
     <div class="container">
       <h1>KONCEPT - SORTING VISUALISER</h1>
@@ -63,8 +54,6 @@
           <select class="form-control" id="get-algo">
             <option value="bubble-sort">Bubble Sort</option>
             <option value="selection-sort">Selection Sort</option>
-            <option value="merge-sort">Merge Sort</option>
-            <option value="insert-sort">Insertion Sort</option>
           </select>
         </div>
 
@@ -107,13 +96,52 @@
       </div>
     </div>
 
-    
+
+    <section class="container ">
+      <br><br><br>
+      <h1><strong>Dive In Deeper!</strong></h1>
+    </section>
+
+  <section class="container text-justify">
+    <br>
+    <h2>Bubble Sort</h2>
+    <p>Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It continues to do this until the list is sorted. The algorithm gets its name because smaller elements "bubble" to the top of the list with each iteration. Though easy to understand, it's not efficient for large lists due to its O(n^2) time complexity.</p>
   <pre>
-    <code>
-      hi
-    </code>
-   </pre>
-  
+  <code>
+   //Bubble Sort Algorithm
+    begin BubbleSort(arr)  
+      for all array elements  
+        if arr[i] &amp;gt; arr[i+1]  
+          swap(arr[i], arr[i+1])  
+        end if  
+      end for     
+    return arr     
+    end BubbleSort
+</code>
+</pre>
+</section>
+
+<section class="container text-justify">
+  <br>
+  <h2>Selection Sort</h2>
+  <p>Selection sort iterates through the array, selecting the smallest (or largest, depending on sorting order) element, and swapping it with the first unsorted element. This process continues until the entire array is sorted. It has a time complexity of O(n^2) in all cases, making it inefficient for large datasets but simple to implement. It's an in-place comparison-based sorting algorithm. It is not stable, meaning that the relative order of equal elements is not preserved.</p>
+<pre>
+<code>
+  //Selection Sort
+  function selection_sort(array):
+  m = length(array)
+  for i = 0 to m-2:
+      // Assume the current index (i) has the minimum value
+      min_index = i
+      // Find the minimum element in the remaining unsorted part
+      for j = i + 1 to m-1:
+          if array[j] &lt; array[min_index]:
+              min_index = j
+      // Swap the found minimum element with the first element of the unsorted part
+      swap(array[i], array[min_index])
+</code>
+</pre>
+</section>
 
     <footer>
       <div class="footer-text">
@@ -127,5 +155,7 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="base.js"></script>
     <script src="function.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
   </body>
 </html>
