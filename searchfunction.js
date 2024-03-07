@@ -10,8 +10,8 @@ var svg,
   smallestColor = "#ab87ff",
   unsortedColor = "#add8e6",
   sortedColor = "green",
-  isSorting = false,
-  isFound = false;
+  isSorting = false;
+
 
 var swooshAudio = new Audio("./../sound-effects/swoosh.mp3");
 var completeAudio = new Audio("./../sound-effects/complete.mp3");
@@ -35,7 +35,7 @@ createChart(data);
 const SearchAlgo = {
   liearSearch() {
     // promise for async bubble sort with delay
-
+    isFound=false;
     const timer = (ms) => new Promise((res) => setTimeout(res, ms));
     // async function for bubble sort
 
@@ -58,16 +58,14 @@ const SearchAlgo = {
           document.getElementById("foundNotice").innerHTML = text;
           console.log("found");
           await timer(time);
-          let n=1;
+          isFound=true;
           break;
         }
      }
-     if(n=0)
+     if(!isFound)
      {
-        let text = target + " Not Found ";
-        document.getElementById("foundNotice").innerHTML = text;
+        document.getElementById("foundNotice").innerHTML = target + " Not Found ";
         console.log("notfound");
-        await timer(time);
     }
       // after complete sorting complete making all the bar green and playing complete sound effects
 
@@ -82,13 +80,13 @@ const SearchAlgo = {
 
   binarySearch() {
     // promise for async bubble sort with delay
-
+    isFound=false;
     const timer = (ms) => new Promise((res) => setTimeout(res, ms));
     // async function for bubble sort
 
     async function search(self) {
       console.log(target);
-      let l = 0,n =0;
+      let l = 0;
        let r = data.length - 1,mid;
       while (l <= r) {
         // If user click on stop button then this function will stop performing here.
@@ -102,6 +100,7 @@ const SearchAlgo = {
           let text = target + " Found at position " + (mid + 1);
           document.getElementById("foundNotice").innerHTML = text;
           await timer(time);
+          isFound=true;
           break;
         } 
         else if (data[mid] < target)
@@ -117,6 +116,11 @@ const SearchAlgo = {
         await timer(time);
      
       }
+      if(!isFound)
+     {
+        document.getElementById("foundNotice").innerHTML = target + " Not Found ";
+        console.log("notfound");
+    }
       
       
 
